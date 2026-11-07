@@ -1,0 +1,67 @@
+<header class="sec">
+  <h1 style="font-size:clamp(1.6rem,1.2rem+2.4vw,2.6rem);margin-bottom:.3em">{{I brain icolor-c}} 速记中心</h1>
+  <p class="lead" style="font-size:1rem">闪卡、小测验和一页可打印摘要。进度只在这台设备的浏览器里。问80–82的填空文字来自语料，其余卡片是作者编写的大意。</p>
+  <div class="chips no-print"><a class="chip gold" href="#h-cards">闪卡</a><a class="chip grace" href="#h-quiz">测验</a><a class="chip water" href="#h-spaced">间隔复习</a><a class="chip creed" href="#h-creedquiz">信经测验</a><a class="chip rose" href="#h-print">打印摘要</a></div>
+</header>
+<section class="sec no-print" id="s-cards">
+  <h2 id="h-cards"><span class="num">1</span>闪卡</h2>
+  <p>点击卡片翻面；点填空显示答案；然后选“记得”“模糊”或“忘了”。</p>
+  <div class="ctrl" role="group" aria-label="选择卡组">
+    <button class="hbtn" data-deck="heads" aria-pressed="true" type="button">三个要点</button>
+    <button class="hbtn" data-deck="texts" aria-pressed="false" type="button">经文大意</button>
+    <button class="hbtn" data-deck="concepts" aria-pressed="false" type="button">概念</button>
+    <button class="hbtn" data-deck="hc30" aria-pressed="false" type="button">问80–82填空</button>
+    <button class="hbtn" data-deck="creed" aria-pressed="false" type="button">信经下一句</button>
+    <button class="hbtn" data-deck="all" aria-pressed="false" type="button">全部</button>
+  </div>
+  <div class="bar" aria-hidden="true"><i id="fc-bar"></i></div>
+  <p class="muted small" id="fc-stat" style="font-family:var(--sans);text-align:center"></p>
+  <div class="fc" id="fc" tabindex="0" role="button" aria-label="闪卡，点击翻面"><div class="fc-in">
+    <div class="fc-face fc-front"><span class="k" id="fc-k"></span><div class="q" id="fc-q"></div><span class="muted small" id="fc-box" style="font-family:var(--sans)"></span></div>
+    <div class="fc-face fc-back"><span class="k">答案</span><div id="fc-a"></div></div>
+  </div></div>
+  <div class="ctrl"><button class="btn sm line" data-grade="bad" type="button">✗ 忘了</button><button class="btn sm line" data-grade="hard" type="button">△ 模糊</button><button class="btn sm" data-grade="good" type="button">✓ 记得</button><button class="btn sm line" id="fc-skip" type="button">跳过</button><button class="btn sm line" id="fc-reset" type="button">重置进度</button></div>
+</section>
+<section class="sec no-print" id="s-quiz">
+  <h2 id="h-quiz"><span class="num">2</span>讲章小测验</h2>
+  <div class="card quiz" id="quiz-ser"><div class="q-text"></div><div class="q-opts"></div><div class="q-fb" role="status"></div><div class="ctrl"><span class="q-score"></span><button class="btn sm q-next" type="button" hidden>下一题</button></div></div>
+</section>
+<section class="sec no-print" id="s-creedquiz">
+  <h2 id="h-creedquiz"><span class="num">3</span>信经测验</h2>
+  <div class="card quiz" id="quiz-creed">
+    <div class="ctrl" style="justify-content:flex-start"><select aria-label="选择信经"><option value="apostles">使徒信经</option><option value="nicene">尼西亚信经</option><option value="athanasian">亚他那修信经</option></select>
+    <span class="seg" role="group" aria-label="题型"><button type="button" data-kind="next" aria-pressed="true">下一句</button><button type="button" data-kind="order" aria-pressed="false">排顺序</button></span></div>
+    <div class="q-text"></div><div class="q-opts"></div><div class="q-fb" role="status"></div><div class="ctrl"><span class="q-score"></span><button class="btn sm q-next" type="button" hidden>下一题</button></div>
+  </div>
+</section>
+<section class="sec no-print" id="s-spaced">
+  <h2 id="h-spaced"><span class="num">4</span>间隔复习</h2>
+  <div class="tbl-wrap min2 rv"><table>
+   <thead><tr><th>时间</th><th>内容</th><th>时长</th></tr></thead><tbody>
+   <tr><td>第0天</td><td>读一屏总览；说出三个要点和一句话总结</td><td>15分钟</td></tr>
+   <tr><td>第1天</td><td>问80填空；复述“对方自述”和“改革宗判断”的差别</td><td>10分钟</td></tr>
+   <tr><td>第3天</td><td>问81填空；用三问预备：承认什么、信靠谁、顺服哪一步</td><td>10分钟</td></tr>
+   <tr><td>第7天</td><td>问82与问85；看<a href="table.html">圣餐桌专题</a>；做小测验</td><td>15分钟</td></tr>
+   <tr><td>第14天</td><td>全部卡片；能画出省察岔路，并说明它不是判断人心的机器</td><td>10分钟</td></tr>
+   <tr><td>第30天</td><td>从出12走到启19，再说一次本段17–34的四段结构</td><td>15分钟</td></tr>
+  </tbody></table></div>
+</section>
+<section class="sec" id="s-print">
+  <h2 id="h-print" class="no-print"><span class="num">5</span>一页可打印摘要</h2>
+  <p class="no-print"><button class="btn" type="button" data-print>{{I print}} 打印 / 存为 PDF</button></p>
+  <div class="print-sheet">
+    <h3>基督以完全的救恩安慰并更新他的教会 · 林前11:17–34 · 主日30</h3>
+    <p><b>一句</b>：基督不叫我们靠自己的完全换座位，而用一次完成的救恩召悔改的人同席，并使我们珍惜他所爱的教会。</p>
+    <table><thead><tr><th>要点</th><th>一句话</th><th>经文 / 要理</th></tr></thead><tbody>
+      <tr><td>① 仰望</td><td>多次领受，不是多次献上</td><td>林前11:23–26；来7–10；问80</td></tr>
+      <tr><td>② 省察</td><td>忧伤、信靠、更新；软弱仍可来</td><td>林前11:27–32；问81</td></tr>
+      <tr><td>③ 身体</td><td>尊重主，也尊重肢体；纪律为归正</td><td>林前11:17–22、33–34；问82、85</td></tr>
+    </tbody></table>
+    <p><b>口诀</b>：仰望主 · 省察己 · 顾念人。不补献 · 不装配得 · 不轻贱人。</p>
+    {{SENT HC 81 answer | 这样的人可以领圣餐}}
+    <p class="muted small">引文来自 ccifellowship.org 语料。经文请对照圣经。威斯敏斯特标准不在本页逐字引用。</p>
+  </div>
+</section>
+{{DATA creeds}}
+{{DATA hc30}}
+<script type="application/json" id="cards-data">{"heads": [{"tag": "要点①", "q": "第一点叫什么？", "a": "仰望一次献上的基督。问80。多次领受，不是让献祭反复发生。"}, {"tag": "要点②", "q": "第二点叫什么？", "a": "省察来到桌前的自己。问81。忧伤、信靠、渴慕更新；软弱的悔改者仍被邀请。"}, {"tag": "要点③", "q": "第三点叫什么？", "a": "尊重基督所爱的身体。问82。分辨主与肢体；纪律为了归正，不是私人定价。"}, {"tag": "题目", "q": "讲题、经文、要理？", "a": "基督以完全的救恩安慰并更新他的教会。林前11:17–34。主日30，问80–82。"}, {"tag": "一句", "q": "一句话总结？", "a": "基督不叫我们靠自己的完全换座位，而用一次完成的救恩召悔改的人同席，并使我们珍惜他所爱的教会。"}, {"tag": "口诀", "q": "三个方向？", "a": "仰望主，省察己，顾念人。80看根基，81看领受，82看守护。"}, {"tag": "不配", "q": "不合宜地等于什么？", "a": "问的是领受方式，不是先证明自己配得救恩。"}, {"tag": "疾病", "q": "11:30能不能诊断一切疾病？", "a": "不能。保罗对当时的哥林多有判断；今天不能把每种病倒推成隐藏的罪。"}], "texts": [{"q": "林前11:17–22 大意？", "a": "这种聚集有害：有分裂，有人只顾自己吃喝，有人饿、有人醉，缺乏的人受辱。"}, {"q": "林前11:23–26 大意？", "a": "保罗重述主在被出卖的夜里所设立的饼与杯；吃喝是宣告主的死，直到他来。"}, {"q": "林前11:27–29 大意？", "a": "用不相称的方式领受，就在主的身体与血上有罪；人要察验自己，然后吃喝；不分辨身体的，是吃喝审判。"}, {"q": "林前11:30–32 大意？", "a": "他们中间有软弱、患病与死亡，与主的管教有关；管教是为免与世人一同定罪。"}, {"q": "林前11:33–34 大意？", "a": "聚集时要彼此等候；若只是饿了，应在家里吃，免得聚集招来审判。"}, {"q": "来7–10 与本讲的关系？", "a": "大意：旧的祭要反复献；基督一次献上就坐下。多次领餐不是补献。"}, {"q": "出12、出24、耶31、路22、启19 各提醒什么？", "a": "先拯救后记念；约血与筵席；新约赦罪；主自己解释饼杯；将来的羔羊婚筵。都是大意，不是把每顿饭等同圣餐。"}], "concepts": [{"q": "问80的版本史，哪一点较稳？", "a": "1563年德文第一版没有这一问；后来的1563年版先有较短文字，再有加长的文字。具体到某日则不必说死。"}, {"q": "天主教是否教导每次把耶稣重新杀死？", "a": "官方自述不是这样。他们说同一祭献、不流血地临现。改革宗仍拒绝祭司性的赎罪献上和对饼酒的朝拜。"}, {"q": "问80的重话是谁的判断？", "a": "是改革宗的信仰判断，不是对方对自己的中性介绍，也不是对每个天主教徒结局的宣判。"}, {"q": "分辨身体怎么讲才稳？", "a": "29节的直接所指有不同着重。无论如何，前后文不许人尊崇圣餐却羞辱肢体。"}, {"q": "纪律的目标？", "a": "归正与保护，不是报复，也不是按财富或私人好恶赶人。程序依本地教会的正当秩序。"}, {"q": "主日29在本站是什么角色？", "a": "只作背景：上一主日说明桌子表明什么。本讲问的是怎样来、与弥撒有何分别、教会如何守护。"}, {"q": "威斯敏斯特在本站怎样出现？", "a": "只在专题页作标明为概述的对照，不逐字引用。"}], "quiz": [{"q": "本讲章对应海德堡哪一主日？", "opts": ["主日28", "主日29", "主日30", "主日31"], "a": 2, "why": "主日30是问80–82。主日29是背景，主日31的问85补充纪律次序。"}, {"q": "“不合宜地”主要问什么？", "opts": ["领受的方式", "是否已经无罪", "是否情绪激动", "是否坐在前排"], "a": 0, "why": "副词指向方式。前文是自私与羞辱，不是一张完人成绩单。"}, {"q": "问80加入的历史，哪句较稳？", "opts": ["第一版就有而且从未改", "德文第一版没有，后来的1563年版才加入并加长", "它写于特伦托闭幕之后的12月", "执笔人已经可以确定"], "a": 1, "why": "次序较清楚；具体日期与唯一动机不要说死。"}, {"q": "罗马天主教官方怎样描述弥撒与十字架？", "opts": ["每次都把耶稣重新流血杀死", "同一个祭献，方式是不流血的临现", "只是普通聚餐", "否认十字架有任何功效"], "a": 1, "why": "这是对方自述。改革宗仍拒绝把弥撒当作继续的赎罪献上。"}, {"q": "软弱却悔改的信徒应当怎样被牧养？", "opts": ["长期禁止，直到感觉自己配得", "若没有应处理的拦阻，应被邀请来领受", "只要口头说愿意就可以忽略公开的伤害", "完全不必省察"], "a": 1, "why": "问81顾到尚存的软弱。省察通向领受，不是通向永远的自我审讯。"}, {"q": "11:30允许我们做什么？", "opts": ["用病情侦探每个人的隐罪", "承认保罗对当时教会的判断，却不把它变成今日的公式", "否认神会管教", "拒绝一切医疗"], "a": 1, "why": "使徒的判断是真实的；约9、路13与约伯记限制我们倒推。"}, {"q": "纪律若符合圣经，目标是什么？", "opts": ["让人数好看", "归正、保护、挽回", "按捐献多少排座位", "证明长老永不错误"], "a": 1, "why": "问82说到直到生活归正。滥权是真危险，却不能因此取消一切纪律。"}, {"q": "29节“身体”最稳妥的讲法是？", "opts": ["这个词毫无争议地只有一个意思", "解释有不同着重，但整段不许轻贱会众", "圣餐只等于社会互助", "教会就是饼的物质"], "a": 1, "why": "近文是主的身体与血；上下文把群体伦理说得很清楚。"}]}</script>
