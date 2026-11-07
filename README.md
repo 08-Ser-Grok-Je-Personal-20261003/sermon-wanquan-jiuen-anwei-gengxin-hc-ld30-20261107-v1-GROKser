@@ -10,7 +10,7 @@
 讲题：基督以完全的救恩安慰并更新他的教会。要点：① 仰望一次献上的基督　② 省察来到桌前的自己　③ 尊重基督所爱的身体。
 诗歌只列编号：韵诗第8篇3–5节 · 韵诗第28篇1、4、5节 · 圣诗第52首 · 圣诗第62首（圣餐）· 诗篇23篇。
 
-静态多页网站（HTML / CSS / 原生 JS，无外部库）。Surge 由协调员在自己的电脑发布；本仓库不放 CNAME。
+静态多页网站（HTML / CSS / 原生 JS，无外部库）。版本 v1.1：修正羊皮纸与亮色主题的文字对比度，并加上可逐步查看的三步主线。Surge 由协调员在自己的电脑发布；本仓库不放 CNAME。网址不变。
 
 ## 结构 / Structure
 
@@ -35,6 +35,7 @@ python3 build.py
 python3 verify_verbatim.py
 python3 tools/check_links.py
 python3 tools/qa.py /tmp/shots-ld30 --shots
+python3 tools/contrast_audit.py /tmp/contrast-ld30
 ```
 
 引文指令如 `{{HC 80}}`、`{{BC 35}}`、`{{DORT 5 14}}` 只从 `corpus/` 取文。圣经讲解标为“大意”。主日29只在需要交代上一主日时作为背景出现。

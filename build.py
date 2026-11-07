@@ -14,7 +14,7 @@ CORPUS = ROOT / "corpus"
 SRC = ROOT / "src"
 SITE = "https://ccifellowship.org"
 BUILD_DATE = "2026-11-07"
-VERSION = "v1"
+VERSION = "v1.1"
 
 CREEDS = json.loads((CORPUS / "creeds.json").read_text(encoding="utf-8"))
 BELGIC = json.loads((CORPUS / "belgic.json").read_text(encoding="utf-8"))

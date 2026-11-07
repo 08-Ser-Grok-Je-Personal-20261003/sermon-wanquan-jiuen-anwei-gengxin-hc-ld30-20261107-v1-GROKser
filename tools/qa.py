@@ -167,6 +167,37 @@ with sync_playwright() as p:
                 if pg == "sermon.html" and w in (360, 1280):
                     page.screenshot(path=str(OUT / ("sermon-full-%d.png" % w)), full_page=True)
             ctx.close()
+    # theme switch persists
+    ctx = b.new_context(viewport={"width": 400, "height": 800})
+    page = ctx.new_page()
+    page.goto((ROOT / "index.html").as_uri())
+    page.evaluate("localStorage.setItem('ld30-theme','parchment')")
+    page.reload()
+    page.click("#theme-btn")
+    t1 = page.evaluate("() => ({attr: document.documentElement.getAttribute('data-theme'), store: localStorage.getItem('ld30-theme')})")
+    if t1["attr"] != "light" or t1["store"] != "light":
+        log("index.html", 400, "FAIL theme switch %s" % t1)
+    page.reload()
+    t2 = page.evaluate("() => document.documentElement.getAttribute('data-theme')")
+    if t2 != "light":
+        log("index.html", 400, "FAIL theme not persisted after reload: %s" % t2)
+    else:
+        print("[index.html @400] theme persistence OK")
+    # spine step keeps every label and reveals note 2
+    if page.query_selector("[data-viz-i='1']"):
+        page.click("[data-viz-i='1']")
+        page.wait_for_timeout(80)
+        vis = page.evaluate("""() => {
+          const box = document.querySelector('[data-viz]');
+          const labels = [...box.querySelectorAll('.spine-node small')].map(e => e.textContent.trim().length);
+          const note = box.querySelector('[data-note="1"]');
+          return {labels, noteHidden: note.hidden, pressed: document.querySelector("[data-viz-i='1']").getAttribute('aria-pressed')};
+        }""")
+        if vis["pressed"] != "true" or vis["noteHidden"] or min(vis["labels"]) < 4:
+            log("index.html", 400, "FAIL spine step %s" % vis)
+        else:
+            print("[index.html @400] spine step OK")
+    ctx.close()
     # unsupported speech fallback
     ctx = b.new_context(viewport={"width": 360, "height": 780})
     ctx.add_init_script("Object.defineProperty(window,'speechSynthesis',{value:undefined,configurable:true});")
